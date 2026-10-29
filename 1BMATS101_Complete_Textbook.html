@@ -612,19 +612,37 @@ body {
     .section-title { font-size: 16pt !important; }
 }
 </style>
+<link rel="stylesheet" href="study-hub.css">
 </head>
-<body>
+<body data-subject="math">
 
 <!-- Sticky Navigation Bar -->
 <nav id="top-nav">
-    <div class="nav-title">📐 <span>1BMATS101</span> — Applied Mathematics-I</div>
+    <div class="nav-brand">
+        <a href="1BMATS101_Complete_Textbook.html" class="subject-tab active" title="Active: Applied Mathematics Notes">📐 Mathematics (1BMATS101)</a>
+        <a href="c_programming.html" class="subject-tab" title="Switch to C Programming Notes">💻 C Programming</a>
+    </div>
+
+    <div class="nav-module-pills">
+        <a href="#module-1" class="mod-pill">M1</a>
+        <a href="#module-2" class="mod-pill">M2</a>
+        <a href="#module-3" class="mod-pill">M3</a>
+        <a href="#module-4" class="mod-pill">M4</a>
+        <a href="#module-5" class="mod-pill">M5</a>
+    </div>
+
     <div class="nav-actions">
-        <a href="#module-1" class="nav-btn">M1</a>
-        <a href="#module-2" class="nav-btn">M2</a>
-        <a href="#module-3" class="nav-btn">M3</a>
-        <a href="#module-4" class="nav-btn">M4</a>
-        <a href="#module-5" class="nav-btn">M5</a>
-        <button class="nav-btn print-btn" onclick="window.print()">🖨 Print</button>
+        <button class="nav-tool-btn search-trigger-btn" onclick="openSearchModal()" title="Search Across Both Subjects (Ctrl+K)">
+            🔍 <span class="btn-text">Search</span> <kbd class="kbd-hint">Ctrl K</kbd>
+        </button>
+        <button class="nav-tool-btn" onclick="openBookmarksDrawer()" title="View Bookmarked Questions">
+            ⭐ <span class="btn-text">Bookmarks</span> (<span id="bookmark-count-badge">0</span>)
+        </button>
+        <div class="nav-progress-box" title="Mathematics Subject Mastery">
+            <div class="progress-bar-bg"><div class="progress-bar-fill" id="subject-progress-fill" style="width: 0%;"></div></div>
+            <span class="progress-text" id="subject-progress-text">0 / 125 (0%)</span>
+        </div>
+        <button class="nav-btn print-btn" onclick="window.print()" title="Print Notes or Save as PDF">🖨 Print / PDF</button>
     </div>
 </nav>
 
@@ -798,14 +816,24 @@ body {
             </div>
         </div>
         
-    <div class="question-card">
+    <div class="question-card" id="q1">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 1: First-Order Partial Derivatives of Polynomial Function</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 1:</span>
+                <span class="q-heading">First-Order Partial Derivatives of Polynomial Function</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="1" onclick="toggleBookmark('math', 1, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="1" onchange="toggleMastered('math', 1, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -867,14 +895,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q2">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 2: Equality of Mixed Second-Order Partial Derivatives</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 2:</span>
+                <span class="q-heading">Equality of Mixed Second-Order Partial Derivatives</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="2" onclick="toggleBookmark('math', 2, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="2" onchange="toggleMastered('math', 2, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -954,14 +992,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q3">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 3: Homogeneous Function Degree and Euler&#x27;s Theorem Verification</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 3:</span>
+                <span class="q-heading">Homogeneous Function Degree and Euler&#x27;s Theorem Verification</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="3" onclick="toggleBookmark('math', 3, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="3" onchange="toggleMastered('math', 3, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1035,14 +1083,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q4">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 4: Jacobian of Polar Coordinate Transformation</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 4:</span>
+                <span class="q-heading">Jacobian of Polar Coordinate Transformation</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="4" onclick="toggleBookmark('math', 4, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="4" onchange="toggleMastered('math', 4, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1110,14 +1168,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q5">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 5: Stationary Point and Nature of a Quadratic Surface</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 5:</span>
+                <span class="q-heading">Stationary Point and Nature of a Quadratic Surface</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="5" onclick="toggleBookmark('math', 5, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="5" onchange="toggleMastered('math', 5, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1185,14 +1253,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q6">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 6: Chain Rule for Functions of Two Independent Variables</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 6:</span>
+                <span class="q-heading">Chain Rule for Functions of Two Independent Variables</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="6" onclick="toggleBookmark('math', 6, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="6" onchange="toggleMastered('math', 6, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1272,14 +1350,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q7">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 7: Euler&#x27;s Theorem for Inverse Trigonometric Function</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 7:</span>
+                <span class="q-heading">Euler&#x27;s Theorem for Inverse Trigonometric Function</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="7" onclick="toggleBookmark('math', 7, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="7" onchange="toggleMastered('math', 7, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1359,14 +1447,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q8">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 8: Jacobian Property of Inverses J · J&#x27; = 1</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 8:</span>
+                <span class="q-heading">Jacobian Property of Inverses J · J&#x27; = 1</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="8" onclick="toggleBookmark('math', 8, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="8" onchange="toggleMastered('math', 8, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1452,14 +1550,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q9">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 9: Maclaurin Series Expansion of Two Variables: eˣ cos y</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 9:</span>
+                <span class="q-heading">Maclaurin Series Expansion of Two Variables: eˣ cos y</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="9" onclick="toggleBookmark('math', 9, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="9" onchange="toggleMastered('math', 9, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1533,14 +1641,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q10">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 10: Taylor Series Expansion Around a Non-Zero Point (1, 1)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 10:</span>
+                <span class="q-heading">Taylor Series Expansion Around a Non-Zero Point (1, 1)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="10" onclick="toggleBookmark('math', 10, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="10" onchange="toggleMastered('math', 10, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1614,14 +1732,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q11">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 11: Jacobian for Functional Dependence and Relationship</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 11:</span>
+                <span class="q-heading">Jacobian for Functional Dependence and Relationship</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="11" onclick="toggleBookmark('math', 11, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="11" onchange="toggleMastered('math', 11, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1695,14 +1823,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q12">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 12: Stationary Points and Extrema of a Two-Variable Cubic</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 12:</span>
+                <span class="q-heading">Stationary Points and Extrema of a Two-Variable Cubic</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="12" onclick="toggleBookmark('math', 12, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="12" onchange="toggleMastered('math', 12, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1776,14 +1914,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q13">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 13: Jacobian of 3-Variable Spherical Polar Coordinates</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 13:</span>
+                <span class="q-heading">Jacobian of 3-Variable Spherical Polar Coordinates</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="13" onclick="toggleBookmark('math', 13, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="13" onchange="toggleMastered('math', 13, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1857,14 +2005,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q14">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 14: Homogeneous Function of Degree Zero: u = tan⁻¹(y/x)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 14:</span>
+                <span class="q-heading">Homogeneous Function of Degree Zero: u = tan⁻¹(y/x)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="14" onclick="toggleBookmark('math', 14, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="14" onchange="toggleMastered('math', 14, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -1938,14 +2096,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q15">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 15: Composite Partial Differentiation (Chain Rule with Intermediate Variables)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 15:</span>
+                <span class="q-heading">Composite Partial Differentiation (Chain Rule with Intermediate Variables)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="15" onclick="toggleBookmark('math', 15, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="15" onchange="toggleMastered('math', 15, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2019,14 +2187,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q16">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 16: Euler&#x27;s Theorem on Inverse Tangent: x u_x + y u_y = sin 2u</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 16:</span>
+                <span class="q-heading">Euler&#x27;s Theorem on Inverse Tangent: x u_x + y u_y = sin 2u</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="16" onclick="toggleBookmark('math', 16, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="16" onchange="toggleMastered('math', 16, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2106,14 +2284,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q17">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 17: Second-Order Euler&#x27;s Theorem on Inverse Tangent</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 17:</span>
+                <span class="q-heading">Second-Order Euler&#x27;s Theorem on Inverse Tangent</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="17" onclick="toggleBookmark('math', 17, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="17" onchange="toggleMastered('math', 17, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2193,14 +2381,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q18">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 18: Radial Laplace Operator: u = f(r) where r² = x² + y² + z²</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 18:</span>
+                <span class="q-heading">Radial Laplace Operator: u = f(r) where r² = x² + y² + z²</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="18" onclick="toggleBookmark('math', 18, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="18" onchange="toggleMastered('math', 18, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2280,14 +2478,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q19">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 19: Taylor Series of Two Variables up to 3rd Degree: eˣ log(1 + y)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 19:</span>
+                <span class="q-heading">Taylor Series of Two Variables up to 3rd Degree: eˣ log(1 + y)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="19" onclick="toggleBookmark('math', 19, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="19" onchange="toggleMastered('math', 19, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2361,14 +2569,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q20">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 20: Global / Constrained Maxima and Minima: Dimensions of Open Rectangular Box</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 20:</span>
+                <span class="q-heading">Global / Constrained Maxima and Minima: Dimensions of Open Rectangular Box</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="20" onclick="toggleBookmark('math', 20, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="20" onchange="toggleMastered('math', 20, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2442,14 +2660,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q21">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 21: Stationary Points and Nature: f(x, y) = sin x + sin y + sin(x + y)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 21:</span>
+                <span class="q-heading">Stationary Points and Nature: f(x, y) = sin x + sin y + sin(x + y)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="21" onclick="toggleBookmark('math', 21, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="21" onchange="toggleMastered('math', 21, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2529,14 +2757,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q22">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 22: Jacobian of Implicit Functions</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 22:</span>
+                <span class="q-heading">Jacobian of Implicit Functions</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="22" onclick="toggleBookmark('math', 22, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="22" onchange="toggleMastered('math', 22, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2610,14 +2848,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q23">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 23: Lagrange&#x27;s Method of Multipliers: Minimum Distance to a Plane</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 23:</span>
+                <span class="q-heading">Lagrange&#x27;s Method of Multipliers: Minimum Distance to a Plane</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="23" onclick="toggleBookmark('math', 23, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="23" onchange="toggleMastered('math', 23, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2691,14 +2939,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q24">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 24: Chain Rule Derivative Transformation: Wave Equation Form</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 24:</span>
+                <span class="q-heading">Chain Rule Derivative Transformation: Wave Equation Form</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="24" onclick="toggleBookmark('math', 24, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="24" onchange="toggleMastered('math', 24, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2778,14 +3036,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q25">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 1</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 25: Euler&#x27;s Theorem for Three Variables with Algebraic-Logarithmic Form</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 25:</span>
+                <span class="q-heading">Euler&#x27;s Theorem for Three Variables with Algebraic-Logarithmic Form</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="25" onclick="toggleBookmark('math', 25, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="25" onchange="toggleMastered('math', 25, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2872,14 +3140,24 @@ body {
             </div>
         </div>
         
-    <div class="question-card">
+    <div class="question-card" id="q26">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 26: Gradient of a Scalar Field at a Point</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 26:</span>
+                <span class="q-heading">Gradient of a Scalar Field at a Point</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="26" onclick="toggleBookmark('math', 26, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="26" onchange="toggleMastered('math', 26, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -2959,14 +3237,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q27">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 27: Divergence of a Vector Field</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 27:</span>
+                <span class="q-heading">Divergence of a Vector Field</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="27" onclick="toggleBookmark('math', 27, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="27" onchange="toggleMastered('math', 27, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3040,14 +3328,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q28">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 28: Curl of a Vector Field</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 28:</span>
+                <span class="q-heading">Curl of a Vector Field</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="28" onclick="toggleBookmark('math', 28, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="28" onchange="toggleMastered('math', 28, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3127,14 +3425,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q29">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 29: Unit Normal Vector to a Given Surface</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 29:</span>
+                <span class="q-heading">Unit Normal Vector to a Given Surface</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="29" onclick="toggleBookmark('math', 29, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="29" onchange="toggleMastered('math', 29, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3208,14 +3516,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q30">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 30: Directional Derivative Along a Given Vector</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 30:</span>
+                <span class="q-heading">Directional Derivative Along a Given Vector</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="30" onclick="toggleBookmark('math', 30, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="30" onchange="toggleMastered('math', 30, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3289,14 +3607,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q31">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 31: Maximum Directional Derivative and Its Direction</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 31:</span>
+                <span class="q-heading">Maximum Directional Derivative and Its Direction</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="31" onclick="toggleBookmark('math', 31, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="31" onchange="toggleMastered('math', 31, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3370,14 +3698,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q32">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 32: Condition for a Solenoidal Vector Field</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 32:</span>
+                <span class="q-heading">Condition for a Solenoidal Vector Field</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="32" onclick="toggleBookmark('math', 32, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="32" onchange="toggleMastered('math', 32, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3451,14 +3789,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q33">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 33: Irrotational Vector Field and Finding Constants</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 33:</span>
+                <span class="q-heading">Irrotational Vector Field and Finding Constants</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="33" onclick="toggleBookmark('math', 33, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="33" onchange="toggleMastered('math', 33, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3520,14 +3868,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q34">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 34: Finding Scalar Potential Function φ for an Irrotational Field</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 34:</span>
+                <span class="q-heading">Finding Scalar Potential Function φ for an Irrotational Field</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="34" onclick="toggleBookmark('math', 34, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="34" onchange="toggleMastered('math', 34, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3607,14 +3965,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q35">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 35: Angle Between Two Surfaces at Point of Intersection</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 35:</span>
+                <span class="q-heading">Angle Between Two Surfaces at Point of Intersection</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="35" onclick="toggleBookmark('math', 35, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="35" onchange="toggleMastered('math', 35, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3688,14 +4056,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q36">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 36: Vector Identity: div(curl F⃗) = 0</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 36:</span>
+                <span class="q-heading">Vector Identity: div(curl F⃗) = 0</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="36" onclick="toggleBookmark('math', 36, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="36" onchange="toggleMastered('math', 36, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3769,14 +4147,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q37">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 37: Properties of Position Vector r⃗: Divergence and Curl</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 37:</span>
+                <span class="q-heading">Properties of Position Vector r⃗: Divergence and Curl</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="37" onclick="toggleBookmark('math', 37, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="37" onchange="toggleMastered('math', 37, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3844,14 +4232,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q38">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 38: Gradient of Radial Power Function: ∇(rⁿ)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 38:</span>
+                <span class="q-heading">Gradient of Radial Power Function: ∇(rⁿ)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="38" onclick="toggleBookmark('math', 38, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="38" onchange="toggleMastered('math', 38, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -3925,14 +4323,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q39">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 39: Laplacian of Radial Power Function: ∇²(rⁿ)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 39:</span>
+                <span class="q-heading">Laplacian of Radial Power Function: ∇²(rⁿ)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="39" onclick="toggleBookmark('math', 39, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="39" onchange="toggleMastered('math', 39, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4012,14 +4420,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q40">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 40: Scale Factors in Cylindrical Curvilinear Coordinates</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 40:</span>
+                <span class="q-heading">Scale Factors in Cylindrical Curvilinear Coordinates</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="40" onclick="toggleBookmark('math', 40, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="40" onchange="toggleMastered('math', 40, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4087,14 +4505,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q41">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 41: Irrotational Field and Scalar Potential: Complete Examination Problem</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 41:</span>
+                <span class="q-heading">Irrotational Field and Scalar Potential: Complete Examination Problem</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="41" onclick="toggleBookmark('math', 41, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="41" onchange="toggleMastered('math', 41, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4174,14 +4602,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q42">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 42: Divergence of Radial Field: ∇ · (rⁿ r⃗) and Solenoidal Value</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 42:</span>
+                <span class="q-heading">Divergence of Radial Field: ∇ · (rⁿ r⃗) and Solenoidal Value</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="42" onclick="toggleBookmark('math', 42, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="42" onchange="toggleMastered('math', 42, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4261,14 +4699,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q43">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 43: Curl of Radial Vector Field: ∇ × (rⁿ r⃗)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 43:</span>
+                <span class="q-heading">Curl of Radial Vector Field: ∇ × (rⁿ r⃗)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="43" onclick="toggleBookmark('math', 43, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="43" onchange="toggleMastered('math', 43, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4348,14 +4796,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q44">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 44: Directional Derivative Towards a Point</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 44:</span>
+                <span class="q-heading">Directional Derivative Towards a Point</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="44" onclick="toggleBookmark('math', 44, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="44" onchange="toggleMastered('math', 44, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4435,14 +4893,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q45">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 45: Cross Product of Conservative Fields is Solenoidal</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 45:</span>
+                <span class="q-heading">Cross Product of Conservative Fields is Solenoidal</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="45" onclick="toggleBookmark('math', 45, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="45" onchange="toggleMastered('math', 45, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4516,14 +4984,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q46">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 46: Scale Factors and Orthogonality in Spherical Polar Coordinates</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 46:</span>
+                <span class="q-heading">Scale Factors and Orthogonality in Spherical Polar Coordinates</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="46" onclick="toggleBookmark('math', 46, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="46" onchange="toggleMastered('math', 46, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4597,14 +5075,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q47">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 47: Harmonic Function and Scalar Potential in 3D</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 47:</span>
+                <span class="q-heading">Harmonic Function and Scalar Potential in 3D</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="47" onclick="toggleBookmark('math', 47, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="47" onchange="toggleMastered('math', 47, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4678,14 +5166,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q48">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 48: Tangent Plane and Normal Line to a Surface</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 48:</span>
+                <span class="q-heading">Tangent Plane and Normal Line to a Surface</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="48" onclick="toggleBookmark('math', 48, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="48" onchange="toggleMastered('math', 48, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4759,14 +5257,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q49">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 49: Vector Operator Identity: ∇(A⃗ · B⃗)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 49:</span>
+                <span class="q-heading">Vector Operator Identity: ∇(A⃗ · B⃗)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="49" onclick="toggleBookmark('math', 49, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="49" onchange="toggleMastered('math', 49, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4846,14 +5354,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q50">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 2</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 50: Laplacian in Curvilinear Orthogonal Coordinates</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 50:</span>
+                <span class="q-heading">Laplacian in Curvilinear Orthogonal Coordinates</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="50" onclick="toggleBookmark('math', 50, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="50" onchange="toggleMastered('math', 50, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -4940,14 +5458,24 @@ body {
             </div>
         </div>
         
-    <div class="question-card">
+    <div class="question-card" id="q51">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 51: Rank of a 2×2 and 3×3 Matrix by Elementary Row Operations</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 51:</span>
+                <span class="q-heading">Rank of a 2×2 and 3×3 Matrix by Elementary Row Operations</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="51" onclick="toggleBookmark('math', 51, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="51" onchange="toggleMastered('math', 51, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5021,14 +5549,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q52">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 52: Characteristic Equation and Eigenvalues of a 2×2 Matrix</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 52:</span>
+                <span class="q-heading">Characteristic Equation and Eigenvalues of a 2×2 Matrix</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="52" onclick="toggleBookmark('math', 52, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="52" onchange="toggleMastered('math', 52, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5108,14 +5646,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q53">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 53: Consistency Criteria for Linear Systems (Rouché-Capelli Theorem)</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 53:</span>
+                <span class="q-heading">Consistency Criteria for Linear Systems (Rouché-Capelli Theorem)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="53" onclick="toggleBookmark('math', 53, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="53" onchange="toggleMastered('math', 53, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5183,14 +5731,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q54">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 54: Homogeneous Linear System AX = 0 (Trivial vs Non-Trivial Solutions)</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 54:</span>
+                <span class="q-heading">Homogeneous Linear System AX = 0 (Trivial vs Non-Trivial Solutions)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="54" onclick="toggleBookmark('math', 54, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="54" onchange="toggleMastered('math', 54, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5264,14 +5822,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q55">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 55: Properties of Eigenvalues (Trace and Determinant)</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 55:</span>
+                <span class="q-heading">Properties of Eigenvalues (Trace and Determinant)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="55" onclick="toggleBookmark('math', 55, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="55" onchange="toggleMastered('math', 55, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5345,14 +5913,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q56">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 56: Rank of a 3×4 Matrix by Echelon Form</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 56:</span>
+                <span class="q-heading">Rank of a 3×4 Matrix by Echelon Form</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="56" onclick="toggleBookmark('math', 56, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="56" onchange="toggleMastered('math', 56, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5426,14 +6004,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q57">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 57: Solving Linear System by Gauss Elimination (Unique Solution)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 57:</span>
+                <span class="q-heading">Solving Linear System by Gauss Elimination (Unique Solution)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="57" onclick="toggleBookmark('math', 57, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="57" onchange="toggleMastered('math', 57, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5513,14 +6101,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q58">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 58: Solving Linear System by Gauss-Jordan Method</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 58:</span>
+                <span class="q-heading">Solving Linear System by Gauss-Jordan Method</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="58" onclick="toggleBookmark('math', 58, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="58" onchange="toggleMastered('math', 58, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5606,14 +6204,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q59">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 59: Eigenvalues and Eigenvectors of a 2×2 Symmetric Matrix</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 59:</span>
+                <span class="q-heading">Eigenvalues and Eigenvectors of a 2×2 Symmetric Matrix</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="59" onclick="toggleBookmark('math', 59, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="59" onchange="toggleMastered('math', 59, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5687,14 +6295,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q60">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 60: Verification of Cayley-Hamilton Theorem and Finding Inverse Matrix</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 60:</span>
+                <span class="q-heading">Verification of Cayley-Hamilton Theorem and Finding Inverse Matrix</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="60" onclick="toggleBookmark('math', 60, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="60" onchange="toggleMastered('math', 60, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5768,14 +6386,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q61">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 61: Consistency and Infinite Solutions with Free Parameter</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 61:</span>
+                <span class="q-heading">Consistency and Infinite Solutions with Free Parameter</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="61" onclick="toggleBookmark('math', 61, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="61" onchange="toggleMastered('math', 61, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5855,14 +6483,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q62">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 62: Inconsistent System (No Solution)</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 62:</span>
+                <span class="q-heading">Inconsistent System (No Solution)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="62" onclick="toggleBookmark('math', 62, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="62" onchange="toggleMastered('math', 62, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -5942,14 +6580,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q63">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 63: Rank of Matrix Containing an Unknown Parameter λ</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 63:</span>
+                <span class="q-heading">Rank of Matrix Containing an Unknown Parameter λ</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="63" onclick="toggleBookmark('math', 63, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="63" onchange="toggleMastered('math', 63, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6029,14 +6677,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q64">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 64: Eigenvalues of Special Matrices: Triangular, Orthogonal and Idempotent</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 64:</span>
+                <span class="q-heading">Eigenvalues of Special Matrices: Triangular, Orthogonal and Idempotent</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="64" onclick="toggleBookmark('math', 64, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="64" onchange="toggleMastered('math', 64, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6104,14 +6762,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q65">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 65: Diagonalization of a 2×2 Matrix</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 65:</span>
+                <span class="q-heading">Diagonalization of a 2×2 Matrix</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="65" onclick="toggleBookmark('math', 65, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="65" onchange="toggleMastered('math', 65, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6191,14 +6859,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q66">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 66: Investigation of System Consistency for Parameters λ and μ</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 66:</span>
+                <span class="q-heading">Investigation of System Consistency for Parameters λ and μ</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="66" onclick="toggleBookmark('math', 66, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="66" onchange="toggleMastered('math', 66, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6290,14 +6968,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q67">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 67: Complete Eigenvalues and Eigenvectors of a 3×3 Matrix</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 67:</span>
+                <span class="q-heading">Complete Eigenvalues and Eigenvectors of a 3×3 Matrix</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="67" onclick="toggleBookmark('math', 67, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="67" onchange="toggleMastered('math', 67, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6377,14 +7065,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q68">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 68: Diagonalization of a 3×3 Symmetric Matrix</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 68:</span>
+                <span class="q-heading">Diagonalization of a 3×3 Symmetric Matrix</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="68" onclick="toggleBookmark('math', 68, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="68" onchange="toggleMastered('math', 68, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6464,14 +7162,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q69">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 69: Homogeneous System with Non-Trivial Solutions Depending on Parameter</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 69:</span>
+                <span class="q-heading">Homogeneous System with Non-Trivial Solutions Depending on Parameter</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="69" onclick="toggleBookmark('math', 69, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="69" onchange="toggleMastered('math', 69, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6551,14 +7259,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q70">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 70: Theorem: Eigenvalues of a Real Symmetric Matrix are Real</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 70:</span>
+                <span class="q-heading">Theorem: Eigenvalues of a Real Symmetric Matrix are Real</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="70" onclick="toggleBookmark('math', 70, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="70" onchange="toggleMastered('math', 70, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6638,14 +7356,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q71">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 71: Theorem: Eigenvectors of Real Symmetric Matrix are Orthogonal</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 71:</span>
+                <span class="q-heading">Theorem: Eigenvectors of Real Symmetric Matrix are Orthogonal</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="71" onclick="toggleBookmark('math', 71, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="71" onchange="toggleMastered('math', 71, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6725,14 +7453,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q72">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 72: Gauss Elimination for a 4-Variable System</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 72:</span>
+                <span class="q-heading">Gauss Elimination for a 4-Variable System</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="72" onclick="toggleBookmark('math', 72, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="72" onchange="toggleMastered('math', 72, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6818,14 +7556,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q73">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 73: Powers of Matrix Using Diagonalization (Aⁿ = P Dⁿ P⁻¹)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 73:</span>
+                <span class="q-heading">Powers of Matrix Using Diagonalization (Aⁿ = P Dⁿ P⁻¹)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="73" onclick="toggleBookmark('math', 73, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="73" onchange="toggleMastered('math', 73, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6905,14 +7653,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q74">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 74: Rank of a 4×4 Matrix by Normal Form [I_r, 0]</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 74:</span>
+                <span class="q-heading">Rank of a 4×4 Matrix by Normal Form [I_r, 0]</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="74" onclick="toggleBookmark('math', 74, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="74" onchange="toggleMastered('math', 74, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -6998,14 +7756,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q75">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 3</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 75: Cayley-Hamilton Theorem for 3×3 Matrix: Inverse and Higher Powers</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 75:</span>
+                <span class="q-heading">Cayley-Hamilton Theorem for 3×3 Matrix: Inverse and Higher Powers</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="75" onclick="toggleBookmark('math', 75, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="75" onchange="toggleMastered('math', 75, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7092,14 +7860,24 @@ body {
             </div>
         </div>
         
-    <div class="question-card">
+    <div class="question-card" id="q76">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 76: Definition of Vector Space over ℝ and Its Fundamental Axioms</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 76:</span>
+                <span class="q-heading">Definition of Vector Space over ℝ and Its Fundamental Axioms</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="76" onclick="toggleBookmark('math', 76, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="76" onchange="toggleMastered('math', 76, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7161,14 +7939,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q77">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 77: Subspace Criteria (The Two-Step and One-Step Subspace Tests)</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 77:</span>
+                <span class="q-heading">Subspace Criteria (The Two-Step and One-Step Subspace Tests)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="77" onclick="toggleBookmark('math', 77, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="77" onchange="toggleMastered('math', 77, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7230,14 +8018,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q78">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 78: Linear Combinations and Span of Vectors</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 78:</span>
+                <span class="q-heading">Linear Combinations and Span of Vectors</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="78" onclick="toggleBookmark('math', 78, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="78" onchange="toggleMastered('math', 78, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7311,14 +8109,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q79">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 79: Testing Linear Independence of Vectors in ℝ³</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 79:</span>
+                <span class="q-heading">Testing Linear Independence of Vectors in ℝ³</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="79" onclick="toggleBookmark('math', 79, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="79" onchange="toggleMastered('math', 79, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7386,14 +8194,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q80">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 80: Basis and Dimension of a Vector Space</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 80:</span>
+                <span class="q-heading">Basis and Dimension of a Vector Space</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="80" onclick="toggleBookmark('math', 80, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="80" onchange="toggleMastered('math', 80, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7467,14 +8285,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q81">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 81: Subspace Verification: Plane Passing Through the Origin</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 81:</span>
+                <span class="q-heading">Subspace Verification: Plane Passing Through the Origin</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="81" onclick="toggleBookmark('math', 81, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="81" onchange="toggleMastered('math', 81, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7548,14 +8376,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q82">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 82: Finding Basis and Dimension of a Subspace in ℝ⁴</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 82:</span>
+                <span class="q-heading">Finding Basis and Dimension of a Subspace in ℝ⁴</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="82" onclick="toggleBookmark('math', 82, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="82" onchange="toggleMastered('math', 82, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7635,14 +8473,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q83">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 83: Coordinates of a Vector Relative to an Ordered Basis</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 83:</span>
+                <span class="q-heading">Coordinates of a Vector Relative to an Ordered Basis</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="83" onclick="toggleBookmark('math', 83, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="83" onchange="toggleMastered('math', 83, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7716,14 +8564,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q84">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 84: Inner Product Axioms and Verification on ℝ²</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 84:</span>
+                <span class="q-heading">Inner Product Axioms and Verification on ℝ²</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="84" onclick="toggleBookmark('math', 84, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="84" onchange="toggleMastered('math', 84, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7797,14 +8655,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q85">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 85: Norm, Distance and Angle Between Vectors in Inner Product Space</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 85:</span>
+                <span class="q-heading">Norm, Distance and Angle Between Vectors in Inner Product Space</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="85" onclick="toggleBookmark('math', 85, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="85" onchange="toggleMastered('math', 85, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7878,14 +8746,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q86">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 86: Verification of the Cauchy-Schwarz Inequality</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 86:</span>
+                <span class="q-heading">Verification of the Cauchy-Schwarz Inequality</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="86" onclick="toggleBookmark('math', 86, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="86" onchange="toggleMastered('math', 86, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -7965,14 +8843,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q87">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 87: Orthogonal Projection of a Vector onto a Subspace</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 87:</span>
+                <span class="q-heading">Orthogonal Projection of a Vector onto a Subspace</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="87" onclick="toggleBookmark('math', 87, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="87" onchange="toggleMastered('math', 87, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8046,14 +8934,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q88">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 88: Inner Product on Polynomial Space P₂[-1, 1]</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 88:</span>
+                <span class="q-heading">Inner Product on Polynomial Space P₂[-1, 1]</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="88" onclick="toggleBookmark('math', 88, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="88" onchange="toggleMastered('math', 88, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8121,14 +9019,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q89">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 89: Subspace of Symmetric Matrices: Basis and Dimension</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 89:</span>
+                <span class="q-heading">Subspace of Symmetric Matrices: Basis and Dimension</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="89" onclick="toggleBookmark('math', 89, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="89" onchange="toggleMastered('math', 89, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8202,14 +9110,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q90">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 90: Triangle Inequality in Inner Product Space</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 90:</span>
+                <span class="q-heading">Triangle Inequality in Inner Product Space</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="90" onclick="toggleBookmark('math', 90, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="90" onchange="toggleMastered('math', 90, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8283,14 +9201,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q91">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 91: Gram-Schmidt Orthogonalization Process in ℝ³</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 91:</span>
+                <span class="q-heading">Gram-Schmidt Orthogonalization Process in ℝ³</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="91" onclick="toggleBookmark('math', 91, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="91" onchange="toggleMastered('math', 91, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8364,14 +9292,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q92">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 92: Theorem: Intersection of Two Subspaces is a Subspace</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 92:</span>
+                <span class="q-heading">Theorem: Intersection of Two Subspaces is a Subspace</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="92" onclick="toggleBookmark('math', 92, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="92" onchange="toggleMastered('math', 92, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8445,14 +9383,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q93">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 93: Union of Subspaces Theorem (Subspace iff One is Contained in the Other)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 93:</span>
+                <span class="q-heading">Union of Subspaces Theorem (Subspace iff One is Contained in the Other)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="93" onclick="toggleBookmark('math', 93, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="93" onchange="toggleMastered('math', 93, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8532,14 +9480,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q94">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 94: Basis of Polynomial Space P₂(ℝ)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 94:</span>
+                <span class="q-heading">Basis of Polynomial Space P₂(ℝ)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="94" onclick="toggleBookmark('math', 94, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="94" onchange="toggleMastered('math', 94, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8613,14 +9571,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q95">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 95: Basis and Dimension of the Null Space (Solution Space of Homogeneous System)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 95:</span>
+                <span class="q-heading">Basis and Dimension of the Null Space (Solution Space of Homogeneous System)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="95" onclick="toggleBookmark('math', 95, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="95" onchange="toggleMastered('math', 95, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8700,14 +9668,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q96">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 96: Orthogonal Complement W^⊥ of a Subspace in ℝ⁴</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 96:</span>
+                <span class="q-heading">Orthogonal Complement W^⊥ of a Subspace in ℝ⁴</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="96" onclick="toggleBookmark('math', 96, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="96" onchange="toggleMastered('math', 96, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8787,14 +9765,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q97">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 97: Parseval&#x27;s Identity and Bessel&#x27;s Inequality</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 97:</span>
+                <span class="q-heading">Parseval&#x27;s Identity and Bessel&#x27;s Inequality</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="97" onclick="toggleBookmark('math', 97, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="97" onchange="toggleMastered('math', 97, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8874,14 +9862,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q98">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 98: Gram-Schmidt Process on Polynomial Inner Product Space</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 98:</span>
+                <span class="q-heading">Gram-Schmidt Process on Polynomial Inner Product Space</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="98" onclick="toggleBookmark('math', 98, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="98" onchange="toggleMastered('math', 98, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -8955,14 +9953,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q99">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 99: Transition Matrix (Change of Basis Matrix)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 99:</span>
+                <span class="q-heading">Transition Matrix (Change of Basis Matrix)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="99" onclick="toggleBookmark('math', 99, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="99" onchange="toggleMastered('math', 99, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9042,14 +10050,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q100">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 4</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 100: Orthogonal Matrix Representation and Isometry of Inner Product</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 100:</span>
+                <span class="q-heading">Orthogonal Matrix Representation and Isometry of Inner Product</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="100" onclick="toggleBookmark('math', 100, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="100" onchange="toggleMastered('math', 100, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9130,14 +10148,24 @@ body {
             </div>
         </div>
         
-    <div class="question-card">
+    <div class="question-card" id="q101">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 101: Definition and Properties of a Linear Transformation</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 101:</span>
+                <span class="q-heading">Definition and Properties of a Linear Transformation</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="101" onclick="toggleBookmark('math', 101, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="101" onchange="toggleMastered('math', 101, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9205,14 +10233,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q102">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 102: Testing Linearity of a Transformation (Passing vs Failing)</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 102:</span>
+                <span class="q-heading">Testing Linearity of a Transformation (Passing vs Failing)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="102" onclick="toggleBookmark('math', 102, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="102" onchange="toggleMastered('math', 102, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9280,14 +10318,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q103">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 103: Kernel (Null Space) and Range (Image) Definitions</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 103:</span>
+                <span class="q-heading">Kernel (Null Space) and Range (Image) Definitions</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="103" onclick="toggleBookmark('math', 103, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="103" onchange="toggleMastered('math', 103, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9361,14 +10409,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q104">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 104: Rank-Nullity Theorem Statement and Verification</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 104:</span>
+                <span class="q-heading">Rank-Nullity Theorem Statement and Verification</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="104" onclick="toggleBookmark('math', 104, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="104" onchange="toggleMastered('math', 104, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9442,14 +10500,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q105">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 105: Standard Matrix of a Linear Transformation</span>
-            <span class="diff-badge diff-Fundamental">Fundamental</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 105:</span>
+                <span class="q-heading">Standard Matrix of a Linear Transformation</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Fundamental">Fundamental</span>
+                <button class="bookmark-btn" data-subject="math" data-q="105" onclick="toggleBookmark('math', 105, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="105" onchange="toggleMastered('math', 105, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9523,14 +10591,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q106">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 106: Finding a Linear Transformation from Its Action on a Basis</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 106:</span>
+                <span class="q-heading">Finding a Linear Transformation from Its Action on a Basis</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="106" onclick="toggleBookmark('math', 106, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="106" onchange="toggleMastered('math', 106, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9610,14 +10688,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q107">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 107: Kernel, Nullity, Range, and Rank of a Transformation from ℝ³ to ℝ³</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 107:</span>
+                <span class="q-heading">Kernel, Nullity, Range, and Rank of a Transformation from ℝ³ to ℝ³</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="107" onclick="toggleBookmark('math', 107, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="107" onchange="toggleMastered('math', 107, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9697,14 +10785,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q108">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 108: Testing Whether a Linear Transformation is One-to-One and Onto</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 108:</span>
+                <span class="q-heading">Testing Whether a Linear Transformation is One-to-One and Onto</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="108" onclick="toggleBookmark('math', 108, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="108" onchange="toggleMastered('math', 108, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9784,14 +10882,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q109">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 109: Matrix Representation Relative to Non-Standard Bases</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 109:</span>
+                <span class="q-heading">Matrix Representation Relative to Non-Standard Bases</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="109" onclick="toggleBookmark('math', 109, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="109" onchange="toggleMastered('math', 109, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9865,14 +10973,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q110">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 110: Composition of Linear Transformations and Matrix Multiplication</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 110:</span>
+                <span class="q-heading">Composition of Linear Transformations and Matrix Multiplication</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="110" onclick="toggleBookmark('math', 110, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="110" onchange="toggleMastered('math', 110, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -9940,14 +11058,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q111">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 111: Linear Transformation on Polynomial Space: Differentiation Operator</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 111:</span>
+                <span class="q-heading">Linear Transformation on Polynomial Space: Differentiation Operator</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="111" onclick="toggleBookmark('math', 111, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="111" onchange="toggleMastered('math', 111, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10027,14 +11155,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q112">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 112: Inverse of an Invertible Linear Transformation</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 112:</span>
+                <span class="q-heading">Inverse of an Invertible Linear Transformation</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="112" onclick="toggleBookmark('math', 112, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="112" onchange="toggleMastered('math', 112, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10114,14 +11252,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q113">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 113: Similarity of Matrix Representations under Change of Basis</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 113:</span>
+                <span class="q-heading">Similarity of Matrix Representations under Change of Basis</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="113" onclick="toggleBookmark('math', 113, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="113" onchange="toggleMastered('math', 113, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10195,14 +11343,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q114">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 114: Rank and Nullity of a Matrix Transformation</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 114:</span>
+                <span class="q-heading">Rank and Nullity of a Matrix Transformation</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="114" onclick="toggleBookmark('math', 114, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="114" onchange="toggleMastered('math', 114, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10276,14 +11434,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q115">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 115: Orthogonal Projection Operator in ℝ³: Matrix and Properties</span>
-            <span class="diff-badge diff-Intermediate">Intermediate</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 115:</span>
+                <span class="q-heading">Orthogonal Projection Operator in ℝ³: Matrix and Properties</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Intermediate">Intermediate</span>
+                <button class="bookmark-btn" data-subject="math" data-q="115" onclick="toggleBookmark('math', 115, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="115" onchange="toggleMastered('math', 115, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10357,14 +11525,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q116">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 116: Complete Proof of the Rank-Nullity Theorem</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 116:</span>
+                <span class="q-heading">Complete Proof of the Rank-Nullity Theorem</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="116" onclick="toggleBookmark('math', 116, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="116" onchange="toggleMastered('math', 116, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10450,14 +11628,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q117">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 117: Theorem: T is One-to-One if and only if Kernel(T) = {0}</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 117:</span>
+                <span class="q-heading">Theorem: T is One-to-One if and only if Kernel(T) = {0}</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="117" onclick="toggleBookmark('math', 117, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="117" onchange="toggleMastered('math', 117, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10525,14 +11713,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q118">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 118: Equivalence of One-to-One and Onto for Equal Finite Dimensions</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 118:</span>
+                <span class="q-heading">Equivalence of One-to-One and Onto for Equal Finite Dimensions</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="118" onclick="toggleBookmark('math', 118, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="118" onchange="toggleMastered('math', 118, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10606,14 +11804,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q119">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 119: Linear Transformation on Matrix Space M₂₂(ℝ): Trace and Transpose</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 119:</span>
+                <span class="q-heading">Linear Transformation on Matrix Space M₂₂(ℝ): Trace and Transpose</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="119" onclick="toggleBookmark('math', 119, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="119" onchange="toggleMastered('math', 119, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10687,14 +11895,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q120">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 120: Rank and Nullity of Composite Linear Transformation (Sylvester&#x27;s Inequality)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 120:</span>
+                <span class="q-heading">Rank and Nullity of Composite Linear Transformation (Sylvester&#x27;s Inequality)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="120" onclick="toggleBookmark('math', 120, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="120" onchange="toggleMastered('math', 120, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10768,14 +11986,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q121">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 121: Matrix Representation on Polynomial Space with Quadratic Basis</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 121:</span>
+                <span class="q-heading">Matrix Representation on Polynomial Space with Quadratic Basis</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="121" onclick="toggleBookmark('math', 121, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="121" onchange="toggleMastered('math', 121, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10855,14 +12083,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q122">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 122: Finding Linear Transformation from Kernel and Image Specifications</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 122:</span>
+                <span class="q-heading">Finding Linear Transformation from Kernel and Image Specifications</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="122" onclick="toggleBookmark('math', 122, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="122" onchange="toggleMastered('math', 122, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -10942,14 +12180,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q123">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 123: Idempotent Transformation (Projection) Properties</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 123:</span>
+                <span class="q-heading">Idempotent Transformation (Projection) Properties</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="123" onclick="toggleBookmark('math', 123, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="123" onchange="toggleMastered('math', 123, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -11023,14 +12271,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q124">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 124: Non-Commutativity of Geometric Transformations (Rotation vs Reflection)</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 124:</span>
+                <span class="q-heading">Non-Commutativity of Geometric Transformations (Rotation vs Reflection)</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="124" onclick="toggleBookmark('math', 124, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="124" onchange="toggleMastered('math', 124, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -11110,14 +12368,24 @@ body {
         </div>
     </div>
     
-    <div class="question-card">
+    <div class="question-card" id="q125">
         <div class="header-bar">
             <span>VTU 1BMATS101: APPLIED MATHEMATICS-I</span>
             <span>MODULE 5</span>
         </div>
         <div class="q-title-bar">
-            <span>QUESTION 125: Application of Rank-Nullity Theorem: Systems of Linear Equations</span>
-            <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+            <div class="q-title-left">
+                <span class="q-number">QUESTION 125:</span>
+                <span class="q-heading">Application of Rank-Nullity Theorem: Systems of Linear Equations</span>
+            </div>
+            <div class="q-title-right">
+                <span class="diff-badge diff-Exam-Level">Exam-Level</span>
+                <button class="bookmark-btn" data-subject="math" data-q="125" onclick="toggleBookmark('math', 125, this)" title="Bookmark Question">⭐ Bookmark</button>
+                <label class="mastered-label" title="Mark as Mastered">
+                    <input type="checkbox" class="mastered-checkbox" data-subject="math" data-q="125" onchange="toggleMastered('math', 125, this)">
+                    <span>Mastered</span>
+                </label>
+            </div>
         </div>
 
         <div class="full-q-box">
@@ -11729,5 +12997,6 @@ body {
         </div>
     </div>
     
+<script src="study-hub.js"></script>
 </body>
 </html>
