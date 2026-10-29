@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/1BMATS101_Complete_Textbook.html" }
+  ]
+}
